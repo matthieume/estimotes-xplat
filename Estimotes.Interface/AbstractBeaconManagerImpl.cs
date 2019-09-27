@@ -19,8 +19,8 @@ namespace Estimotes
 
         protected AbstractBeaconManagerImpl()
         {
-            Settings.Local.KeysNotToClear.Add(SETTING_KEY);
-            this.monitoringRegions = Settings.Local.Get(SETTING_KEY, new List<BeaconRegion>());
+            CrossSettings.Current.KeysNotToClear.Add(SETTING_KEY);
+            this.monitoringRegions = CrossSettings.Current.Get(SETTING_KEY, new List<BeaconRegion>());
             this.rangingRegions = new List<BeaconRegion>();
 
             this.UpdateMonitoringList();
@@ -147,9 +147,9 @@ namespace Estimotes
         protected virtual void UpdateMonitoringList()
         {
             if (this.monitoringRegions.Any())
-                Settings.Local.Set(SETTING_KEY, this.monitoringRegions);
+                CrossSettings.Current.Set(SETTING_KEY, this.monitoringRegions);
             else
-                Settings.Local.Remove(SETTING_KEY);
+                CrossSettings.Current.Remove(SETTING_KEY);
 
             this.MonitoringRegions = new ReadOnlyCollection<BeaconRegion>(this.monitoringRegions);
         }

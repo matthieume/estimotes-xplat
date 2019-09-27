@@ -5,7 +5,7 @@ using Android.App;
 using EstimoteSdk;
 using Android.Content;
 using Android.Util;
-
+using EstimoteSdk.Service;
 
 namespace Estimotes
 {
@@ -21,19 +21,19 @@ namespace Estimotes
         {
             this.beaconManager = new BeaconManager(Application.Context);
 
-            this.beaconManager.EnteredRegion += (sender, args) =>
+            this.beaconManager.BeaconEnteredRegion += (sender, args) =>
             {
                 Log.Debug(DEBUG_TAG, "EnteredRegion Event");
                 var region = this.FromNative(args.Region);
                 this.OnRegionStatusChanged(region, true);
             };
-            this.beaconManager.ExitedRegion += (sender, args) =>
+            this.beaconManager.BeaconExitedRegion += (sender, args) =>
             {
                 Log.Debug(DEBUG_TAG, "ExitedRegion Event");
-                var region = this.FromNative(args.P0);
+                var region = this.FromNative(args.Region);
                 this.OnRegionStatusChanged(region, false);
             };
-            this.beaconManager.Ranging += (sender, args) =>
+            this.beaconManager.BeaconRanging += (sender, args) =>
             {
                 Log.Debug(DEBUG_TAG, "Ranging Event");
                 var beacons = args.Beacons.Select(x => new Beacon(x)).ToList();
@@ -109,7 +109,7 @@ namespace Estimotes
         protected override void StopMonitoringNative(BeaconRegion region)
         {
             var native = this.ToNative(region);
-            this.beaconManager.StopMonitoring(native);
+            this.beaconManager.StopMonitoring(native.Identifier);
         }
 
 
@@ -127,7 +127,7 @@ namespace Estimotes
         }
 
 
-        protected virtual BeaconRegion FromNative(Region native)
+        protected virtual BeaconRegion FromNative(EstimoteSdk.Observation.Region.Beacon.BeaconRegion native)
         {
             return new BeaconRegion(
                 native.Identifier,
@@ -137,18 +137,18 @@ namespace Estimotes
             );
         }
 
-        protected virtual Region ToNative(BeaconRegion region)
+        protected virtual EstimoteSdk.Observation.Region.Beacon.BeaconRegion ToNative(BeaconRegion region)
         {
-            Region native = null;
+            EstimoteSdk.Observation.Region.Beacon.BeaconRegion native = null;
 
             if (region.Major > 0 && region.Minor > 0)
-                native = new Region(region.Identifier, region.Uuid, region.Major.Value, region.Minor.Value);
+                native = new EstimoteSdk.Observation.Region.Beacon.BeaconRegion(region.Identifier, region.Uuid, region.Major.Value, region.Minor.Value);
 
             else if (region.Major > 0)
-                native = new Region(region.Identifier, region.Uuid, region.Major.Value);
+                native = new EstimoteSdk.Observation.Region.Beacon.BeaconRegion(region.Identifier, region.Uuid, region.Major.Value);
 
             else
-                native = new Region(region.Identifier, region.Uuid);
+                native = new EstimoteSdk.Observation.Region.Beacon.BeaconRegion(region.Identifier, region.Uuid);
 
             return native;
         }

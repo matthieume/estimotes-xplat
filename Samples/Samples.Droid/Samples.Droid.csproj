@@ -14,12 +14,11 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <MandroidI18n />
     <JavaMaximumHeapSize>
     </JavaMaximumHeapSize>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
@@ -185,10 +184,6 @@
     <ProjectReference Include="..\..\Estimotes.Droid\Estimotes.Droid.csproj">
       <Project>{EEE78647-0789-4CE5-BDBE-43A1A9256457}</Project>
       <Name>Estimotes.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Samples\Samples.csproj">
-      <Name>Samples</Name>
-      <Project>{E2D72DDC-611A-4D07-87CE-9ECDC484DF5C}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

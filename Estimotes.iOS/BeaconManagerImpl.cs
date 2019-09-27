@@ -63,7 +63,7 @@ namespace Estimotes
                 return BeaconInitStatus.Success;
 
             var tcs = new TaskCompletionSource<BeaconInitStatus>();
-            var funcPnt = new EventHandler<AuthorizationStatusChangedEventArgs>((sender, args) =>
+            var funcPnt = new EventHandler<BeaconManagerAuthorizationStatusChangedEventArgs>((sender, args) =>
             {
                 if (args.Status == CLAuthorizationStatus.NotDetermined)
                     return; // not done yet
@@ -100,28 +100,28 @@ namespace Estimotes
         protected override void StartMonitoringNative(BeaconRegion region)
         {
             var native = this.ToNative(region);
-            this.beaconManager.StartMonitoringForRegion(native);
+            this.beaconManager.StartMonitoring(native);
         }
 
 
         protected override void StartRangingNative(BeaconRegion region)
         {
             var native = this.ToNative(region);
-            this.beaconManager.StartRangingBeaconsInRegion(native);
+            this.beaconManager.StartMonitoring(native);
         }
 
 
         protected override void StopMonitoringNative(BeaconRegion region)
         {
             var native = this.ToNative(region);
-            this.beaconManager.StopMonitoringForRegion(native);
+            this.beaconManager.StartMonitoring(native);
         }
 
 
         protected override void StopRangingNative(BeaconRegion region)
         {
             var native = this.ToNative(region);
-            this.beaconManager.StopRangingBeaconsInRegion(native);
+            this.beaconManager.StartMonitoring(native);
         }
 
 

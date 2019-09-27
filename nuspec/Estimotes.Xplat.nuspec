@@ -1,39 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <id>Estimotes.Xplat</id>
-        <version>2.0.0</version>
+        <id>Matthieume.Estimotes.Xplat</id>
+        <version>3.0.1</version>
         <title>ACR Estimotes Plugin for Xamarin</title>
         <description>Estimotes Plugin for Xamarin to allow for cross platform development using the Estimote libraries</description>
-        <authors>Allan Ritchie</authors>
-        <owners>Allan Ritchie</owners>
+        <authors>Allan Ritchie, Matthieu Barthelemy</authors>
+        <owners>Allan Ritchie, Matthieu Barthelemy</owners>
         <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
-        <projectUrl>https://github.com/aritchie/estimotes-xplat</projectUrl>
+        <projectUrl>https://github.com/matthieume/estimotes-xplat</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin xam.pcl estimotes beacons proximity location eddystone ibeacon ble bluetooth</tags>
         <releaseNotes>
-2.0
+3.0
 update to latest estimote bindings
-[breaking] remove RX methods - they didn't add much benefit
-[breaking] remove eddystones - interest for this project is nil.
-[fix][droid] simplify beacon init process
-[fix][droid] don't keep beacons in queue.  Beacons work on a scan wave.
         </releaseNotes>
         <dependencies>
             <group targetFramework="MonoAndroid10">
-                <dependency id="Acr.Settings" version="[5.1, 6)" />
-                <dependency id="Xamarin.Estimote.Android" version="(,1.0]" />
+                <dependency id="Acr.Settings" version="[9.0.1, 10)" />
+				<dependency id="Newtonsoft.Json" version="[12.0.2, 13)" />
+                <dependency id="System.Reactive.Linq" version="[4.1.6, 5)" />
+                <dependency id="Xamarin.Estimote.Android" version="[1.0.3, 2)" />
+
             </group>
             <group targetFramework="Xamarin.iOS10">
-                <dependency id="Acr.Settings" version="[5.1, 6)" />
-                <dependency id="Xamarin.Estimote.iOS" version="[4.7.3.2, 5)" />
+                <dependency id="Acr.Settings" version="[9.0.1, 10)" />
+				<dependency id="Newtonsoft.Json" version="[12.0.2, 13)" />
+                <dependency id="System.Reactive.Linq" version="[4.1.6, 5)" />
+                <dependency id="Xamarin.Estimote.iOS" version="[4.26.3, 5)" />
             </group>
         </dependencies>
     </metadata>
     <files>
-        <!-- PCL -->
-        <file src="..\Estimotes\bin\Release\Estimotes.*" target="lib\portable-win+net45+wp8+win8+wpa81\" />
-
         <!-- android -->
         <file src="..\Estimotes.Droid\bin\Release\Estimotes.*" target="lib\MonoAndroid10\" />
 

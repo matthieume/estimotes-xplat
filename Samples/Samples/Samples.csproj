@@ -52,16 +52,6 @@
     <Compile Include="ViewModels\MonitoredViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Estimotes.Interface\Estimotes.Interface.csproj">
-      <Project>{5B2339D1-65D5-4483-ACA9-997350A30E5B}</Project>
-      <Name>Estimotes.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Estimotes\Estimotes.csproj">
-      <Project>{CB762848-028C-4470-87C5-843B411AD77D}</Project>
-      <Name>Estimotes</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="Acr.Mvvm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Acr.Mvvm.1.2.0\lib\portable-win+net45+wp8+win8+wpa81\Acr.Mvvm.dll</HintPath>
       <Private>True</Private>

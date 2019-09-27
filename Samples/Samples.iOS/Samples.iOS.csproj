@@ -107,12 +107,8 @@
     <ProjectReference Include="..\..\Estimotes.iOS\Estimotes.iOS.csproj">
       <Project>{41E04F11-D6FC-4A4D-B844-F7C067EAE970}</Project>
       <Name>Estimotes.iOS</Name>
-      <IsAppExtension>False</IsAppExtension>
-      <IsWatchApp>False</IsWatchApp>
-    </ProjectReference>
-    <ProjectReference Include="..\Samples\Samples.csproj">
-      <Name>Samples</Name>
-      <Project>{E2D72DDC-611A-4D07-87CE-9ECDC484DF5C}</Project>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

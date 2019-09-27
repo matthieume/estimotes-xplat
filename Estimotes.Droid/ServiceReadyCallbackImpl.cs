@@ -1,6 +1,6 @@
 using System;
 using EstimoteSdk;
-
+using EstimoteSdk.Service;
 
 namespace Estimotes {
 
