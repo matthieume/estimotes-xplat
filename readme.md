@@ -1,13 +1,13 @@
-﻿# ACR ESTIMOTES PLUGIN FOR XAMARIN
+# ACR ESTIMOTES PLUGIN FOR XAMARIN
 
-## This project is not currently supported.  It remains live on nuget and working to the best of my knowledge.  I simply don't have the time to deal with the consistent (and often repeated) questions that come with this library, so I have suspended issues for the time being.
+Forked from [https://github.com/aritchie/estimotes-xplat](https://github.com/aritchie/estimotes-xplat) that wasn't supported anymore. This version is updated to the last Xamarin.Estimote.Android & Xamarin.Estimote.iOS versions.
 
 ---
 
 This is a cross platform implementation of the estimote library for beacons.  It will allow you to make beacon calls for your PCL library.
 Please be sure to read through the samples found in this repository!
 
-This library currently only supported on iOS and Android.  You can get it on nuget at [https://www.nuget.org/packages/Estimotes.Xplat/](https://www.nuget.org/packages/Estimotes.Xplat/)
+This library currently only supported on iOS and Android.  You can get it on nuget at [https://www.nuget.org/packages/Matthieume.Estimotes.Xplat/](https://www.nuget.org/packages/Matthieume.Estimotes.Xplat/)
 
 
 ## SETUP
