@@ -107,21 +107,21 @@ namespace Estimotes
         protected override void StartRangingNative(BeaconRegion region)
         {
             var native = this.ToNative(region);
-            this.beaconManager.StartMonitoring(native);
+            this.beaconManager.StartRangingBeacons(native);
         }
 
 
         protected override void StopMonitoringNative(BeaconRegion region)
         {
             var native = this.ToNative(region);
-            this.beaconManager.StartMonitoring(native);
+            this.beaconManager.StopMonitoring(native);
         }
 
 
         protected override void StopRangingNative(BeaconRegion region)
         {
             var native = this.ToNative(region);
-            this.beaconManager.StartMonitoring(native);
+            this.beaconManager.StopRangingBeacons(native);
         }
 
 

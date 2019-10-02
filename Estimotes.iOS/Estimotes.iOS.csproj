@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Estimote.iOS, Version=1.0.6752.16415, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Xamarin.Estimote.iOS.4.26.3\lib\Xamarin.iOS10\Xamarin.Estimote.iOS.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Estimote.iOS.4.26.3\lib\Xamarin.iOS10\Xamarin.Estimote.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
